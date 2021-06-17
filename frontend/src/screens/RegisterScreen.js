@@ -45,7 +45,7 @@ const RegisterScreen = ({ location, history }) => {
             {loading && <Loader/>}
             <Form onSubmit={submitHandler}>
                 <Form.Group controlId='name'>
-                    <Form.Label>Email Address</Form.Label>
+                    <Form.Label>Name</Form.Label>
                     <Form.Control
                         type='name'
                         placeholder='Enter Name'
@@ -74,13 +74,12 @@ const RegisterScreen = ({ location, history }) => {
                 <Form.Group controlId='confirmPassword'>
                     <Form.Label>Confirm Password</Form.Label>
                     <Form.Control
-                        type='confirmPassword'
+                        type='password'
                         placeholder='Confirm Password'
                         value={confirmPassword}
                         onChange={(e) => setConfirmPassword(e.target.value)}
                     />
                 </Form.Group>
-
 
                 <Button type='submit' variant='primary'>
                     Register
@@ -90,7 +89,7 @@ const RegisterScreen = ({ location, history }) => {
             <Row className='py-3'>
                 <Col>
                     Have an Account? {' '}
-                    <Link to={redirect ? `/login ?redirect=${redirect}` : '/login'}>
+                    <Link to={redirect ? `/login?redirect=${redirect}` : '/login'}>
                         Login
                     </Link>
                 </Col>
